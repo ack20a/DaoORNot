@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导了么 - 个人中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .status-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background-color: #f8fafc;
+            transform: translateX(2px);
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS状态栏 -->
+    <div class="status-bar px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center space-x-1">
+            <span>9:41</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <i class="fas fa-signal text-sm"></i>
+            <i class="fas fa-wifi text-sm"></i>
+            <i class="fas fa-battery-three-quarters text-sm"></i>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="flex-1 pb-20">
+        <!-- 个人信息头部 -->
+        <div class="gradient-bg text-white px-6 py-8 rounded-b-3xl">
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" class="w-20 h-20 rounded-full border-4 border-white border-opacity-20">
+                    <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white"></div>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold">导管小专家</h2>
+                    <p class="text-blue-100 text-sm mt-1">ID: dao123456</p>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs font-bold">LV.5</span>
+                        <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">VIP会员</span>
+                    </div>
+                </div>
+                <button class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-cog text-white"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 统计数据 -->
+        <div class="px-6 -mt-6">
+            <div class="bg-white rounded-2xl p-6 card-shadow">
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-600">127</div>
+                        <div class="text-xs text-gray-500 mt-1">累计导管</div>
+                    </div>
+                    <div class="text-center border-l border-r border-gray-200">
+                        <div class="text-2xl font-bold text-green-600">23</div>
+                        <div class="text-xs text-gray-500 mt-1">连续天数</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-orange-600">8</div>
+                        <div class="text-xs text-gray-500 mt-1">骑手服务</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 今日成就 -->
+        <div class="px-6 mt-6">
+            <div class="stats-card rounded-2xl p-6 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-1">今日成就</h3>
+                        <p class="text-orange-100 text-sm">坚持就是胜利！</p>
+                    </div>
+                    <div class="text-4xl">🏆</div>
+                </div>
+                <div class="mt-4 bg-white bg-opacity-20 rounded-xl p-3">
+                    <div class="flex items-center justify-between text-sm">
+                        <span>本周进度</span>
+                        <span>5/7</span>
+                    </div>
+                    <div class="w-full bg-white bg-opacity-20 rounded-full h-2 mt-2">
+                        <div class="bg-white h-2 rounded-full" style="width: 71%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能菜单 -->
+        <div class="px-6 mt-6">
+            <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                <!-- 我的订单 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-receipt text-blue-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">我的订单</h4>
+                            <p class="text-xs text-gray-500 mt-1">查看历史订单记录</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 导管记录 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-purple-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">导管记录</h4>
+                            <p class="text-xs text-gray-500 mt-1">统计分析与健康建议</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 我的收藏 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bookmark text-yellow-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">我的收藏</h4>
+                            <p class="text-xs text-gray-500 mt-1">收藏的帖子和技巧</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 好友管理 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-green-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">好友管理</h4>
+                            <p class="text-xs text-gray-500 mt-1">添加和管理导友</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs bg-red-500 text-white px-2 py-1 rounded-full">3</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 钱包 -->
+                <div class="menu-item px-4 py-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-wallet text-pink-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">我的钱包</h4>
+                            <p class="text-xs text-gray-500 mt-1">余额：¥156.80</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 设置菜单 -->
+        <div class="px-6 mt-6">
+            <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                <!-- 提醒设置 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bell text-orange-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">提醒设置</h4>
+                            <p class="text-xs text-gray-500 mt-1">自定义提醒时间和方式</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 隐私设置 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-gray-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">隐私设置</h4>
+                            <p class="text-xs text-gray-500 mt-1">数据安全与隐私保护</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 帮助与反馈 -->
+                <div class="menu-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-question-circle text-blue-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">帮助与反馈</h4>
+                            <p class="text-xs text-gray-500 mt-1">使用指南和问题反馈</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- 关于我们 -->
+                <div class="menu-item px-4 py-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-info-circle text-indigo-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-800 text-sm">关于导了么</h4>
+                            <p class="text-xs text-gray-500 mt-1">版本 v1.2.3</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 退出登录 -->
+        <div class="px-6 mt-6">
+            <button class="w-full bg-red-50 text-red-500 py-4 rounded-2xl font-bold hover:bg-red-100 transition-colors">
+                退出登录
+            </button>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+        <div class="flex items-center justify-around py-2">
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-home text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">首页</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-motorcycle text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">服务</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-users text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">社区</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-bell text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">消息</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-user text-purple-500 text-lg"></i>
+                <div class="text-xs text-purple-500 font-medium mt-1">我的</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

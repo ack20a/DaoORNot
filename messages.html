@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导了么 - 消息中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .status-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .message-item {
+            transition: all 0.3s ease;
+        }
+        .message-item:hover {
+            background-color: #f8fafc;
+        }
+        .unread-dot {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS状态栏 -->
+    <div class="status-bar px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center space-x-1">
+            <span>9:41</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <i class="fas fa-signal text-sm"></i>
+            <i class="fas fa-wifi text-sm"></i>
+            <i class="fas fa-battery-three-quarters text-sm"></i>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="flex-1 pb-20">
+        <!-- 头部 -->
+        <div class="gradient-bg text-white px-6 py-6 rounded-b-3xl">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold">消息中心</h1>
+                    <p class="text-blue-100 text-sm mt-1">3条未读消息</p>
+                </div>
+                <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-search text-white text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 快捷功能 -->
+        <div class="px-6 -mt-4">
+            <div class="bg-white rounded-2xl p-4 card-shadow">
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2 relative">
+                            <i class="fas fa-bell text-red-500 text-lg"></i>
+                            <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-xs font-bold">3</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-600 font-medium">提醒</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 relative">
+                            <i class="fas fa-motorcycle text-blue-500 text-lg"></i>
+                            <div class="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-xs font-bold">1</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-600 font-medium">骑手</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-heart text-green-500 text-lg"></i>
+                        </div>
+                        <span class="text-xs text-gray-600 font-medium">点赞</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-gift text-purple-500 text-lg"></i>
+                        </div>
+                        <span class="text-xs text-gray-600 font-medium">活动</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 消息列表 -->
+        <div class="px-6 mt-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">最近消息</h3>
+            
+            <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                <!-- 系统提醒 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-bell text-white text-lg"></i>
+                            </div>
+                            <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full unread-dot"></div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">导管提醒</h4>
+                                <span class="text-xs text-gray-400">刚刚</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">该导管了！今天还没有完成哦 💦</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 骑手消息 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face" class="w-12 h-12 rounded-full">
+                            <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full unread-dot"></div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">小李哥 (骑手)</h4>
+                                <span class="text-xs text-gray-400">5分钟前</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">已到楼下，请下来开门哦~</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 社区互动 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=48&h=48&fit=crop&crop=face" class="w-12 h-12 rounded-full">
+                            <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full unread-dot"></div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">导管小王子</h4>
+                                <span class="text-xs text-gray-400">15分钟前</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">赞了你的动态</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 好友消息 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b977?w=48&h=48&fit=crop&crop=face" class="w-12 h-12 rounded-full">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">小美美</h4>
+                                <span class="text-xs text-gray-400">1小时前</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">谢谢你的指导，效果很好！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 系统通知 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gift text-blue-500 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">活动通知</h4>
+                                <span class="text-xs text-gray-400">2小时前</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">新人福利：首次叫骑手立减10元！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 订单状态 -->
+                <div class="message-item px-4 py-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-green-500 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">订单完成</h4>
+                                <span class="text-xs text-gray-400">昨天</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">服务已完成，请为骑手评价</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 好友申请 -->
+                <div class="message-item px-4 py-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=48&h=48&fit=crop&crop=face" class="w-12 h-12 rounded-full">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm">阿强</h4>
+                                <span class="text-xs text-gray-400">昨天</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">申请添加你为好友</p>
+                            <div class="flex space-x-2 mt-2">
+                                <button class="bg-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+                                    同意
+                                </button>
+                                <button class="bg-gray-200 text-gray-600 px-4 py-1 rounded-full text-xs font-bold">
+                                    拒绝
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 清空按钮 -->
+        <div class="px-6 mt-6">
+            <button class="w-full bg-gray-100 text-gray-600 py-3 rounded-xl font-bold hover:bg-gray-200 transition-colors">
+                清空所有消息
+            </button>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+        <div class="flex items-center justify-around py-2">
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-home text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">首页</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-motorcycle text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">服务</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-users text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">社区</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-bell text-purple-500 text-lg"></i>
+                <div class="text-xs text-purple-500 font-medium mt-1">消息</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-user text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">我的</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

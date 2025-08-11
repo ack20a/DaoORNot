@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导了么 - APP原型展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .phone-frame {
+            width: 393px;
+            height: 852px;
+            background: #000;
+            border-radius: 47px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 39px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .prototype-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .prototype-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .prototype-title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        iframe {
+            border: none;
+            border-radius: 39px;
+        }
+    </style>
+</head>
+<body>
+    <div class="prototype-grid">
+        <div class="prototype-card">
+            <h2 class="prototype-title">首页 - 今日导管</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="home.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="prototype-card">
+            <h2 class="prototype-title">服务页 - 骑手帮导</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="service.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="prototype-card">
+            <h2 class="prototype-title">社区页 - 导友圈</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="community.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="prototype-card">
+            <h2 class="prototype-title">消息页 - 通知中心</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="messages.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="prototype-card">
+            <h2 class="prototype-title">我的页 - 个人中心</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="profile.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="prototype-card">
+            <h2 class="prototype-title">骑手端 - 接单页面</h2>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <iframe src="rider.html" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导了么 - 导友圈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .status-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .post-card {
+            transition: all 0.3s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS状态栏 -->
+    <div class="status-bar px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center space-x-1">
+            <span>9:41</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <i class="fas fa-signal text-sm"></i>
+            <i class="fas fa-wifi text-sm"></i>
+            <i class="fas fa-battery-three-quarters text-sm"></i>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="flex-1 pb-20">
+        <!-- 头部 -->
+        <div class="gradient-bg text-white px-6 py-6 rounded-b-3xl">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold">导友圈</h1>
+                    <p class="text-blue-100 text-sm mt-1">大家都在聊什么</p>
+                </div>
+                <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-plus text-white text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 话题标签 -->
+        <div class="px-6 -mt-4">
+            <div class="bg-white rounded-2xl p-4 card-shadow">
+                <div class="flex space-x-2 overflow-x-auto">
+                    <span class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">
+                        🔥 今日热门
+                    </span>
+                    <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">
+                        💡 新手指南
+                    </span>
+                    <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">
+                        🎯 技巧分享
+                    </span>
+                    <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">
+                        😄 搞笑分享
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 动态列表 -->
+        <div class="px-6 mt-6 space-y-4">
+            <!-- 动态1 -->
+            <div class="bg-white rounded-xl p-4 card-shadow post-card">
+                <div class="flex items-center space-x-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-sm text-gray-800">导管小王子</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full">LV.5</span>
+                        </div>
+                        <p class="text-xs text-gray-500">3分钟前</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                </div>
+                
+                <div class="mb-3">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        兄弟们！今天发现了一个新姿势，效果爆炸！💥 
+                        <span class="text-purple-600">#新手指南</span> 
+                        <span class="text-purple-600">#技巧分享</span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 mb-3">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=120&h=120&fit=crop" class="w-full h-20 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop" class="w-full h-20 object-cover rounded-lg">
+                    <div class="w-full h-20 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500 text-xs">+3</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-gray-500 text-sm">
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center space-x-1 hover:text-red-500">
+                            <i class="far fa-heart"></i>
+                            <span>128</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-blue-500">
+                            <i class="far fa-comment"></i>
+                            <span>32</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-green-500">
+                            <i class="fas fa-share"></i>
+                            <span>15</span>
+                        </button>
+                    </div>
+                    <button class="hover:text-yellow-500">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 动态2 -->
+            <div class="bg-white rounded-xl p-4 card-shadow post-card">
+                <div class="flex items-center space-x-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b977?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-sm text-gray-800">小美美</span>
+                            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">新人</span>
+                        </div>
+                        <p class="text-xs text-gray-500">15分钟前</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                </div>
+                
+                <div class="mb-3">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        刚刚试了小王子推荐的方法，真的很棒！🥰 
+                        谢谢各位导友的指导，终于不用每天纠结了 
+                        <span class="text-purple-600">#感谢分享</span>
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-between text-gray-500 text-sm">
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center space-x-1 text-red-500">
+                            <i class="fas fa-heart"></i>
+                            <span>89</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-blue-500">
+                            <i class="far fa-comment"></i>
+                            <span>23</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-green-500">
+                            <i class="fas fa-share"></i>
+                            <span>8</span>
+                        </button>
+                    </div>
+                    <button class="hover:text-yellow-500">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 动态3 -->
+            <div class="bg-white rounded-xl p-4 card-shadow post-card">
+                <div class="flex items-center space-x-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-sm text-gray-800">导师阿强</span>
+                            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">认证骑手</span>
+                        </div>
+                        <p class="text-xs text-gray-500">1小时前</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                </div>
+                
+                <div class="mb-3">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        【科普时间】大家要注意身体健康哦！适度导管，过度伤身 💪 
+                        给新人们分享一些注意事项... 
+                        <span class="text-purple-600">#健康提醒</span> 
+                        <span class="text-purple-600">#科普</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg mb-3">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fas fa-lightbulb text-yellow-500"></i>
+                        <span class="font-bold text-sm text-gray-800">健康小贴士</span>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        1. 控制频率，一周2-3次为宜<br>
+                        2. 注意卫生，清洁很重要<br>
+                        3. 适当运动，增强体质
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-between text-gray-500 text-sm">
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center space-x-1 text-red-500">
+                            <i class="fas fa-heart"></i>
+                            <span>256</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-blue-500">
+                            <i class="far fa-comment"></i>
+                            <span>67</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-green-500">
+                            <i class="fas fa-share"></i>
+                            <span>45</span>
+                        </button>
+                    </div>
+                    <button class="text-yellow-500">
+                        <i class="fas fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 动态4 -->
+            <div class="bg-white rounded-xl p-4 card-shadow post-card">
+                <div class="flex items-center space-x-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-sm text-gray-800">搞笑博主</span>
+                            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">段子手</span>
+                        </div>
+                        <p class="text-xs text-gray-500">2小时前</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                </div>
+                
+                <div class="mb-3">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        今天室友问我在干嘛，我说在"导管"... 
+                        他以为我在学医 😂😂😂 
+                        <span class="text-purple-600">#搞笑日常</span> 
+                        <span class="text-purple-600">#误会</span>
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-between text-gray-500 text-sm">
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center space-x-1 text-red-500">
+                            <i class="fas fa-heart"></i>
+                            <span>445</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-blue-500">
+                            <i class="far fa-comment"></i>
+                            <span>98</span>
+                        </button>
+                        <button class="flex items-center space-x-1 hover:text-green-500">
+                            <i class="fas fa-share"></i>
+                            <span>76</span>
+                        </button>
+                    </div>
+                    <button class="hover:text-yellow-500">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+        <div class="flex items-center justify-around py-2">
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-home text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">首页</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-motorcycle text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">服务</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-users text-purple-500 text-lg"></i>
+                <div class="text-xs text-purple-500 font-medium mt-1">社区</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-bell text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">消息</div>
+            </div>
+            <div class="flex-1 text-center py-2">
+                <i class="fas fa-user text-gray-400 text-lg"></i>
+                <div class="text-xs text-gray-400 mt-1">我的</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
